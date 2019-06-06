@@ -7,14 +7,28 @@
 ![](assets/img/presentation.png)
 
 ---
-@title[Customize Slide Layout]
+@title[Code]
 
 @snap[west span-50]
-## Customize Slide Content Layout
+## Syntax Hightlighting
 @snapend
 
 @snap[east span-50]
-![](assets/img/presentation.png)
+```rust
+pub fn load_texture<N>(name: N, world: &World) -> TextureHandle
+where
+    N: Into<String>,
+{
+    let loader = world.read_resource::<Loader>();
+    loader.load(
+        name,
+        PngFormat,
+        TextureMetadata::srgb(),
+        (),
+        &world.read_resource::<AssetStorage<Texture>>(),
+    )
+}
+```
 @snapend
 
 ---?color=#E58537
